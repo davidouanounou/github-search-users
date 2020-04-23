@@ -1,9 +1,16 @@
 import React from 'react';
 
-function App() {
-  return (
-    <div>Hey oh !</div>
-  );
-}
+import { UsersProvider } from './contexts/users';
+import initialUsersStore from './stores/initial-users-store';
+import Results from './components/views/results';
 
+function App() {
+
+  return (
+    <UsersProvider initialStore={initialUsersStore} >
+      <Results />
+    </UsersProvider>
+  );
+}      
+     
 export default App;
